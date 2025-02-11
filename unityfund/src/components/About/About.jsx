@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-import about_img from '../../assets/about'
+import about_img from '../../assets/about.png'
 
 const About = () => {
   return (
@@ -10,7 +10,7 @@ const About = () => {
         </div>
         <div className='about-right'> 
             <h3>About Us</h3>
-            <h2>Helping Hands,Changing Lives</h2>
+            <h2>Helping Hands, Changing Lives</h2>
             <p> Our aim is to support underprivileged individuals by providing essential resources and financial aid. 
                 We strive to create a compassionate society where no one suffers due to a lack of basic necessities. 
                 Through collective efforts, we work towards uplifting lives and fostering hope for a better future.
