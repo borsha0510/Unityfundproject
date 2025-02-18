@@ -28,7 +28,6 @@ const App = () => {
         </>
       )}
 
-      {/* Button to Toggle Login Page */}
       <div className="text-center mt-3">
         <button
           className="btn btn-primary"

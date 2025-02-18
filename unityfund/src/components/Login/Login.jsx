@@ -49,7 +49,7 @@ const Login = () => {
             Log In
           </button>
         </form>
-        <p className="text-center mt-3">or sign in with</p>
+        <p className="text-center mt-3">or Sign Up</p>
         <div className="social-icons d-flex justify-content-center">
           <FaFacebook className="social-icon fb" />
           <FaTwitter className="social-icon twitter" />
