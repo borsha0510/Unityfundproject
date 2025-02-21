@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Signup.css";
-import Login from "../Login/Login";
 
-const Signup = () => {
-  const [showLogin, setShowLogin] = useState(false);
-
+const Signup = ({ onLoginClick }) => {
   return (
     <div className="container">
       <div className="left-side">
@@ -37,23 +34,19 @@ const Signup = () => {
             <div className="checkbox-container">
               <input type="checkbox" />
               <p>
-                I agree to the <a href="#">Terms of User</a>
+                I agree to the <a href="#">Terms of Use</a>
               </p>
             </div>
             <button className="signup-button">Sign Up</button>
           </form>
           <p className="signin-text">
             Already have an account?{" "}
-            <button
-              onClick={() => setShowLogin(true)}
-              className="toggle-button"
-            >
+            <button onClick={onLoginClick} className="toggle-button">
               Sign in →
             </button>
           </p>
         </div>
       </div>
-      {showLogin && <Login />}
     </div>
   );
 };

@@ -6,6 +6,7 @@ import Title from "./components/Title/Title";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Login from "./components/Login/Login";
+import MovePage from "./components/MovePage/MovePage";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -24,6 +25,7 @@ const App = () => {
             <About />
             <Title subTitle="Contact Us" title="Get in Touch" />
             <Contact />
+            <MovePage />
           </div>
         </>
       )}
