@@ -12,9 +12,9 @@ const Hero = () => {
           support with potential donors allowing them to overcome their poverty
           and deal with sudden accidents.
         </p>
-        <button className="btn">
+        {/*<button className="btn">
           Explore more <img src={dark_arrow} alt="" />
-        </button>
+        </button>*/}
       </div>
     </div>
   );
