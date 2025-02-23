@@ -5,7 +5,7 @@ import email from "../../assets/email.png";
 import phone from "../../assets/phone.png";
 import location from "../../assets/location.png";
 
-const Contact = () => {
+const Contact = ({ setShowLogin }) => {
   const [result, setResult] = React.useState("");
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -39,6 +39,9 @@ const Contact = () => {
   return (
     <div className="contact">
       <div className="contact-col">
+        <button className="btn-close" onClick={() => setShowContact(false)}>
+          ✖
+        </button>
         <h3>
           Send us a message <img src={message} alt="" />
         </h3>
@@ -56,7 +59,7 @@ const Contact = () => {
           <li>
             {" "}
             <img src={phone} alt="" />
-            +8801785909562
+            +8801785909562 +8801571499127
           </li>
           <li>
             <img src={location} alt="" /> House #23, Road #10, Block E, Banani,

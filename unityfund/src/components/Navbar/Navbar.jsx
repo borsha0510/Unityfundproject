@@ -1,20 +1,25 @@
 import React from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
-const Navbar = () => {
+
+const Navbar = ({ setShowLogin }) => {
   return (
     <nav className="container">
-      <img src={logo} alt="" className="logo" />
+      <img src={logo} alt="Logo" className="logo" />
       <ul>
         <li>Home</li>
         <li>Program</li>
         <li>About us</li>
         <li>
-          <button className="btn">Login </button>
+          <button className="btn" onClick={() => setShowLogin(true)}>
+            Login
+          </button>
         </li>
         <li>Reviews</li>
         <li>
-          <button className="btn">Contact us</button>
+          {/*<button className="btn" onClick={() => setShowLogin(true)}>
+            Contact us
+          </button>*/}
         </li>
       </ul>
     </nav>

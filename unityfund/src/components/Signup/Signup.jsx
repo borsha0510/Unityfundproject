@@ -1,52 +1,97 @@
 import React from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import "./Signup.css";
+
+const SignupSchema = Yup.object().shape({
+  fullName: Yup.string().required("Full Name is required"),
+  email: Yup.string().email("Invalid email").required("Email is required"),
+  username: Yup.string().required("Username is required"),
+  password: Yup.string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref("password"), null], "Passwords must match")
+    .required("Confirm Password is required"),
+});
 
 const Signup = ({ onLoginClick }) => {
   return (
-    <div className="container">
-      <div className="left-side">
-        <div className="overlay"></div>
-      </div>
-      <div className="right-side">
-        <div className="form-container">
-          <h2 className="title">Sign Up</h2>
-          <form>
+    <div className="right-side">
+      <h2>Sign Up</h2>
+      <Formik
+        initialValues={{
+          fullName: "",
+          email: "",
+          username: "",
+          password: "",
+          confirmPassword: "",
+        }}
+        validationSchema={SignupSchema}
+        onSubmit={(values) => console.log("Signup values:", values)}
+      >
+        {({ isSubmitting }) => (
+          <Form>
             <div className="form-group">
-              <label>Full Name</label>
-              <input type="text" placeholder="Name..." />
+              <Field type="text" name="fullName" placeholder="Full Name" />
+              <ErrorMessage
+                name="fullName"
+                component="div"
+                className="text-danger"
+              />
             </div>
             <div className="form-group">
-              <label>Email</label>
-              <input type="email" placeholder="Email address..." />
+              <Field type="email" name="email" placeholder="Email address" />
+              <ErrorMessage
+                name="email"
+                component="div"
+                className="text-danger"
+              />
             </div>
             <div className="form-group">
-              <label>Username</label>
-              <input type="text" placeholder="Username..." />
+              <Field type="text" name="username" placeholder="Username" />
+              <ErrorMessage
+                name="username"
+                component="div"
+                className="text-danger"
+              />
             </div>
             <div className="form-group">
-              <label>Password</label>
-              <input type="password" placeholder="********" />
+              <Field type="password" name="password" placeholder="Password" />
+              <ErrorMessage
+                name="password"
+                component="div"
+                className="text-danger"
+              />
             </div>
             <div className="form-group">
-              <label>Repeat Password</label>
-              <input type="password" placeholder="********" />
+              <Field
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+              />
+              <ErrorMessage
+                name="confirmPassword"
+                component="div"
+                className="text-danger"
+              />
             </div>
-            <div className="checkbox-container">
-              <input type="checkbox" />
-              <p>
-                I agree to the <a href="#">Terms of Use</a>
-              </p>
-            </div>
-            <button className="signup-button">Sign Up</button>
-          </form>
-          <p className="signin-text">
-            Already have an account?{" "}
-            <button onClick={onLoginClick} className="toggle-button">
-              Sign in →
+            <button
+              type="submit"
+              className="signup-button"
+              disabled={isSubmitting}
+            >
+              Sign Up
             </button>
-          </p>
-        </div>
-      </div>
+          </Form>
+        )}
+      </Formik>
+      <p className="signin-text">
+        Already have an account?{" "}
+        <button onClick={onLoginClick} className="toggle-button">
+          Sign in →
+        </button>
+      </p>
     </div>
   );
 };
