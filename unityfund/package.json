@@ -10,9 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
+    "formik": "^2.4.6",
+    "postcss": "^8.5.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+<<<<<<< HEAD
     "react-router-dom": "^7.2.0"
+=======
+    "react-icons": "^5.4.0",
+    "react-router-dom": "^7.2.0",
+    "yup": "^1.6.1"
+>>>>>>> bd2805a3b1916f08484373971242d8cbb74b1f3b
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
