@@ -1,31 +1,16 @@
-<<<<<<< HEAD
-
-import React from 'react'
-import Navbar from './components/Navbar/Navbar'
-import Hero from './components/Hero/Hero'
-import Programs from './components/Programs/Programs'
-import Title from './components/Title/Title'
-import About from './components/About/About'
-import Contact from './components/Contact/Contact'
-=======
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home";
-import DonationForm from "./components/Donate/DonationForm";
-import Login from "./components/Login/Login";
->>>>>>> bd2805a3b1916f08484373971242d8cbb74b1f3b
+import { Routes, Route } from "react-router-dom"; // Do not import BrowserRouter here
+import Navbar from "./Components/Navbar";
+import Home from "./Page/Home/Home";
 
 const App = () => {
   return (
-    <Router>
+    <div className="app">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/donate" element={<DonationForm />} />
-        <Route path="/login" element={<Login />} /> {/* Add Login Route */}
       </Routes>
-    </Router>
+    </div>
   );
 };
 
