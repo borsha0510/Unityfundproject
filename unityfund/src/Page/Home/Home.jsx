@@ -1,9 +1,11 @@
 import React from "react";
+import "./Home.css";
+import Header from "../../Page/Header/Header";
 
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to Unity Fund</h1>
+      <Header />
     </div>
   );
 };
