@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.left-side {
+  flex: 1;
+  background: url("../../assets/home.png") center/cover no-repeat;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(128, 0, 128, 0.75),
+    rgba(255, 20, 147, 0.75)
+  );
+}
+
+.right-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.signup-button {
+  background: linear-gradient(to right, #8a2be2, #ff1493);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
