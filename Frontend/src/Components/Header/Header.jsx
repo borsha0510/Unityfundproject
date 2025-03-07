@@ -1,8 +1,6 @@
 import React from "react";
 import "./Header.css";
 
-//import donate from "../../Assets/donate.png";
-
 const Header = () => {
   return (
     <div className="header ">

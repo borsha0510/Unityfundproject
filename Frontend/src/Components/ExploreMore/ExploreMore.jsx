@@ -17,6 +17,7 @@ const ExploreMore = () => {
           );
         })}
       </div>
+      <hr />
     </div>
   );
 };
