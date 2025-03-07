@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import logo from "../../assets/logo.png";
-import search_icon from "../../assets/search_icon.png";
-import basket_icon from "../../assets/basket_icon.png";
+import { assets } from "../../assets/assets";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("Home");
   return (
     <div className="navbar">
-      <img src={logo} alt="" className="logo" />
+      <img src={assets.logo} alt="" className="logo" />
       <ul className="navbar-menu">
         <li
           onClick={() => setMenu("Home")}
@@ -36,9 +34,9 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="navbar-right">
-        <img src={search_icon} alt="" />
+        <img src={assets.search_icon} alt="" />
         <div className="navbar-search-icon">
-          <img src={basket_icon} alt="" />
+          <img src={assets.basket_icon} alt="" />
           <div className="dot"></div>
         </div>
         <button className="sign-in-button">Sign In</button>

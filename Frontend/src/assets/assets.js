@@ -1,4 +1,3 @@
-import basket_icon from "./basket_icon.png";
 import logo from "./logo.png";
 import hero from "./hero.png";
 import search_icon from "./search_icon.png";
