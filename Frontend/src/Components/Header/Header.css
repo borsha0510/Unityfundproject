@@ -1,7 +1,7 @@
 .header {
   height: 34vw;
   margin: 30px auto;
-  background: url("/hero.png") no-repeat;
+  background: url("/Donate2.png") no-repeat;
   background-size: contain;
   position: relative;
 }
@@ -25,7 +25,7 @@
 }
 
 .header-contents p {
-  color: rgb(11, 11, 11);
+  color: rgb(1, 4, 8);
   font-size: 1vw;
 }
 
