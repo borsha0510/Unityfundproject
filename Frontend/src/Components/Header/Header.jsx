@@ -11,7 +11,7 @@ const Header = () => {
           support with potential donors allowing them to overcome their poverty
           and deal with sudden accidents.
         </p>
-        <button>Explore more {/*<img src={donate} alt="" />*/}</button>
+        <button>Explore more </button>
       </div>
     </div>
   );
