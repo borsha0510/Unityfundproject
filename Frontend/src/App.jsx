@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Page/Home/Home";
 import Cart from "./Page/Cart/Cart";
 import PlaceDonation from "./Page/PlaceDonation/PlaceDonation";
+import Footer from "./Components/Footer/Footer";
 import Login from "./Components/Login/Login";
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/place-donation" element={<PlaceDonation />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 };
