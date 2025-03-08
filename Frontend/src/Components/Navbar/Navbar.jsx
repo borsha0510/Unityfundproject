@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
-import Login from "../Login/Login";
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("Home");
@@ -10,30 +9,34 @@ const Navbar = ({ setShowLogin }) => {
     <div className="navbar">
       <img src={assets.logo} alt="" className="logo" />
       <ul className="navbar-menu">
-        <li
+        <Link
+          to="/"
           onClick={() => setMenu("Home")}
           className={menu === "Home" ? "active" : ""}
         >
           Home
-        </li>
-        <li
+        </Link>
+        <a
+          href="#explore"
           onClick={() => setMenu(" Donate")}
           className={menu === "Donate" ? "active" : ""}
         >
           Donate
-        </li>
-        <li
+        </a>
+        <a
+          href="#review"
           onClick={() => setMenu(" Review")}
           className={menu === "Review" ? "active" : ""}
         >
           Review
-        </li>
-        <li
+        </a>
+        <a
+          href="#footer"
           onClick={() => setMenu("Contact us")}
           className={menu === "Contact us" ? "active" : ""}
         >
           Contact us
-        </li>
+        </a>
       </ul>
       <div className="navbar-right">
         <img src={assets.search_icon} alt="" />
