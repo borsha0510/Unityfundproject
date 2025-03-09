@@ -27,15 +27,15 @@ import logout_icon from "./logout_icon.png";
 import bag_icon from "./bag_icon.png";
 import basket_icon from "./basket_icon.png";
 
-import food_1 from "./rice.png"
-import food_2 from "./water.png"
-import food_8 from "./oil.png"
-import food_4 from "./warmcloth.png"
-import food_5 from "./blanket.png"
-import food_6 from "./firstaid.png"
-import food_7 from "./painkiller.png"
-import food_3 from "./fruits.png"
-import food_9 from "./muri.png"
+import food_1 from "./rice.png";
+import food_2 from "./water.png";
+import food_8 from "./oil.png";
+import food_4 from "./warmcloth.png";
+import food_5 from "./blanket.png";
+import food_6 from "./firstaid.png";
+import food_7 from "./painkiller.png";
+import food_3 from "./fruits.png";
+import food_9 from "./muri.png";
 
 export const assets = {
   logo,
@@ -76,57 +76,56 @@ export const menu_list = [
 export const food_list = [
   {
     _id: "1",
-    name: "Rice",
+    name: "Rice(1Kg)",
     image: food_1,
-    price: 1,
+    price: 70,
   },
   {
     _id: "2",
-    name: "Water",
+    name: "Water(1L)",
     image: food_2,
-    price: 1,
-  },
-  {
-    _id: "3",
-    name: "Fruits",
-    image: food_3,
-    price: 1.5,
-  },
-  {
-    _id: "4",
-    name: "Sweater and Socks",
-    image: food_4,
     price: 20,
   },
   {
+    _id: "3",
+    name: "Fruits(1Kg)",
+    image: food_3,
+    price: 150,
+  },
+  {
+    _id: "4",
+    name: "Sweater and Socks(1 piece)",
+    image: food_4,
+    price: 250,
+  },
+  {
     _id: "5",
-    name: "Blanket",
+    name: "Blanket(1 piece)",
     image: food_5,
-    price: 10,
+    price: 400,
   },
   {
     _id: "6",
-    name: "First Aid",
+    name: "First Aid(1 piece)",
     image: food_6,
-    price: 12,
+    price: 200,
   },
   {
     _id: "7",
-    name: "Painkiller",
+    name: "Painkiller(1 leaf)",
     image: food_7,
     price: 20,
   },
   {
     _id: "8",
-    name: "Oil",
+    name: "Oil(1L)",
     image: food_8,
-    price: 2,
+    price: 150,
   },
   {
     _id: "9",
-    name: "Puffed Rice",
+    name: "Puffed Rice(500gm)",
     image: food_9,
-    price: 2,
+    price: 80,
   },
-
 ];

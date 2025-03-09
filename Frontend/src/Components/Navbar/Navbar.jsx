@@ -2,13 +2,27 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
+import Login from "../Login/Login";
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("Home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="navbar">
-      <img src={assets.logo} alt="" className="logo" />
-      <ul className="navbar-menu">
+      <Link to="/">
+        <img src={assets.logo} alt="" className="logo" />
+      </Link>
+      <div className="hamburger" onClick={toggleMenu}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </div>
+      <ul className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
         <Link
           to="/"
           onClick={() => setMenu("Home")}
@@ -17,15 +31,15 @@ const Navbar = ({ setShowLogin }) => {
           Home
         </Link>
         <a
-          href="#explore"
-          onClick={() => setMenu(" Donate")}
+          href="#item-display"
+          onClick={() => setMenu("Donate")}
           className={menu === "Donate" ? "active" : ""}
         >
           Donate
         </a>
         <a
-          href="#review"
-          onClick={() => setMenu(" Review")}
+          href="#explore-menu"
+          onClick={() => setMenu("Review")}
           className={menu === "Review" ? "active" : ""}
         >
           Review
@@ -41,7 +55,10 @@ const Navbar = ({ setShowLogin }) => {
       <div className="navbar-right">
         <img src={assets.search_icon} alt="" />
         <div className="navbar-search-icon">
-          <img src={assets.basket_icon} alt="" />
+          <Link to="/cart">
+            {" "}
+            <img src={assets.basket_icon} alt="" />
+          </Link>
           <div className="dot"></div>
         </div>
         <button onClick={() => setShowLogin(true)}>Sign In</button>

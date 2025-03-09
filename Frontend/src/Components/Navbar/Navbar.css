@@ -1,24 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .navbar {
   padding: 20px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  position: relative;
 }
+
 .navbar .logo {
   width: 150px;
+  max-width: 100%;
 }
+
 .navbar-menu {
   display: flex;
   list-style: none;
   gap: 20px;
   color: rgb(8, 61, 69);
   font-size: 18px;
+  transition: all 0.3s ease;
 }
+
+.navbar-menu.open {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-menu li {
+  cursor: pointer;
+  padding: 10px 0;
+}
+
 .navbar-right {
   display: flex;
   align-items: center;
   gap: 40px;
 }
+
 .navbar button {
   background: transparent;
   font-size: 16px;
@@ -29,16 +64,13 @@
   cursor: pointer;
   transition: 0.3s;
 }
+
 .navbar button:hover {
-  background: #fff4f2;
+  background: #fff4ff;
 }
 
-.navbar .active {
-  padding-bottom: 2px;
-  border-bottom: 2px solid #6276b7;
-}
-.navbar li {
-  cursor: pointer;
+.navbar-right img {
+  width: 22px;
 }
 
 .navbar-search-icon {
@@ -55,53 +87,88 @@
   right: -8px;
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 4px;
+  background-color: #49557e;
+  border-radius: 5px;
+}
+
 @media (max-width: 1050px) {
   .navbar .logo {
     width: 140px;
   }
-
   .navbar-menu {
     gap: 20px;
     font-size: 17px;
   }
-
   .navbar-right {
     gap: 30px;
   }
-
   .navbar-right img {
     width: 22px;
   }
-
   .navbar-right button {
     padding: 8px 25px;
   }
 }
+
 @media (max-width: 900px) {
   .navbar .logo {
     width: 120px;
   }
-
   .navbar-menu {
     gap: 15px;
     font-size: 16px;
   }
-
   .navbar-right {
     gap: 20px;
   }
-
   .navbar-right img {
     width: 20px;
   }
-
   .navbar-right button {
     padding: 7px 20px;
     font-size: 15px;
   }
 }
+
 @media (max-width: 750px) {
   .navbar-menu {
     display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .navbar-right {
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .navbar-menu.open {
+    display: flex;
   }
 }

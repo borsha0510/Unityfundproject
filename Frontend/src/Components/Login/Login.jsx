@@ -24,7 +24,7 @@ const Login = ({ setShowLogin }) => {
 
   return (
     <div className="login">
-      <from onSubmit={onLogin} className="login-container">
+      <form onSubmit={onLogin} className="login-container">
         <div className="login-title">
           <h2>{currState}</h2>
           <img
@@ -83,7 +83,7 @@ const Login = ({ setShowLogin }) => {
             <span onClick={() => setcurrState("Login")}>Click here</span>
           </p>
         )}
-      </from>
+      </form>
     </div>
   );
 };

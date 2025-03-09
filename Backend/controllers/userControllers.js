@@ -3,19 +3,15 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import validator from "validator";
 
-const createToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "3d" });
-};
-
 // Login User
-export const loginUser = async (req, res) => {
+const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
     const user = await userModels.findOne({ email });
 
     if (!user) {
-      return res.json({ success: false, message: "User not found" });
+      return res.json({ success: false, message: "User doesn't exist" });
     }
 
     const match = await bcrypt.compare(password, user.password);
@@ -31,9 +27,11 @@ export const loginUser = async (req, res) => {
     return res.json({ success: false, message: "Error during login" });
   }
 };
+const createToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET);
+};
 
-// Register User
-export const registerUser = async (req, res) => {
+const registerUser = async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
@@ -60,21 +58,20 @@ export const registerUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const user = new userModels({
-      name,
-      email,
+    const newUser = new userModels({
+      name: name,
+      email: email,
       password: hashedPassword,
     });
 
-    await user.save();
+    const user = await newUser.save();
     const token = createToken(user._id);
     return res.json({
       success: true,
-      message: "Registration successful",
       token,
     });
   } catch (error) {
     console.log(error);
-    return res.json({ success: false, message: "Error during registration" });
+    res.json({ success: false, message: "Error during registration" });
   }
 };
