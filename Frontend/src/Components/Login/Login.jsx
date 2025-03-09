@@ -1,11 +1,30 @@
-import React, { useState } from "react";
-import "./Login.css";
+import React, { useState, useContext } from "react";
 import { assets } from "../../assets/assets";
+import "./Login.css";
+import { StoreContext } from "../../Context/StoreContext";
+
 const Login = ({ setShowLogin }) => {
-  const [currState, setcurrState] = useState("Sign Up");
+  const { url } = useContext(StoreContext);
+  const [currState, setcurrState] = useState("Login");
+
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const onChangeHandler = (event) => {
+    const name = event.target;
+    const value = event.target.value;
+    setData((data) => ({ ...data, [name]: value }));
+  };
+  const onLogin = async (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className="login">
-      <from className="login-container">
+      <from onSubmit={onLogin} className="login-container">
         <div className="login-title">
           <h2>{currState}</h2>
           <img
@@ -18,12 +37,35 @@ const Login = ({ setShowLogin }) => {
         {currState === "Login" ? (
           <> </>
         ) : (
-          <input type="text" placeholder="Your name" required />
+          <input
+            name="name"
+            onChange={onChangeHandler}
+            value={data.name}
+            type="text"
+            placeholder="Your name"
+            required
+          />
         )}
-        <input type="email" placeholder="Your email" required />
-        <input type="password" placeholder="Your password" required />
+        <input
+          name="email"
+          onChange={onChangeHandler}
+          value={data.email}
+          type="email"
+          placeholder="Your email"
+          required
+        />
+        <input
+          name="password"
+          onChange={onChangeHandler}
+          value={data.password}
+          type="password"
+          placeholder="Your password"
+          required
+        />
 
-        <button>{currState === "Sign Up" ? "Create account" : "Login"}</button>
+        <button type="submit">
+          {currState === "Sign Up" ? "Create account" : "Login"}
+        </button>
         <div className="login-condition">
           <input type="checkbox" required />
           <p>By continuing, I agree to the terms of use & privacy policy.</p>
