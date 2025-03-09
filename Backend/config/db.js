@@ -9,3 +9,4 @@ const connectDB = async () => {
       console.log("Database Connected");
     });
 };
+export default connectDB;

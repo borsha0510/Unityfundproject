@@ -1,8 +1,8 @@
-import { addFood } from "../controllers/foodController.js";
+import { addDonateItem } from "../controllers/DonateControllers.js";
 import multer from "multer";
 import express from "express";
 
-const foodRouter = express.Router();
+const donateRouter = express.Router();
 
 // Image Storage Engine
 const storage = multer.diskStorage({
@@ -14,6 +14,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-foodRouter.post("/add", upload.single("image"), addFood);
+donateRouter.post("/add", upload.single("image"), addDonateItem);
 
-export default foodRouter;
+export default donateRouter;
